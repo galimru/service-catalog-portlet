@@ -5,7 +5,7 @@
 	<portlet>
 		<portlet-name>service-provider</portlet-name>
 		<icon>/icon.png</icon>
-        <configuration-action-class>ru.lanit.samara.portlet.action.ConfigurationActionImpl</configuration-action-class>
+        <configuration-action-class>ru.lanit.samara.portlet.controller.ServiceProviderController</configuration-action-class>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
