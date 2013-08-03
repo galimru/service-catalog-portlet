@@ -8,7 +8,11 @@
         <configuration-action-class>ru.lanit.samara.portlet.controller.ServiceProviderController</configuration-action-class>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
-		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <header-portlet-javascript>/js/jquery-1.9.1.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/ui/jquery.ui.core.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/ui/jquery.ui.widget.js</header-portlet-javascript>
+        <header-portlet-javascript>/js/ui/jquery.ui.accordion.js</header-portlet-javascript>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
 		<css-class-wrapper>service-provider-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
