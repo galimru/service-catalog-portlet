@@ -1,0 +1,4 @@
+.catalog-column-left, .catalog-column-right {
+    float: left;
+    width: 300px;
+}
