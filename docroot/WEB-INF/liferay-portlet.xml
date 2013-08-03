@@ -3,9 +3,9 @@
 
 <liferay-portlet-app>
 	<portlet>
-		<portlet-name>service-provider</portlet-name>
+		<portlet-name>service-catalog</portlet-name>
 		<icon>/icon.png</icon>
-        <configuration-action-class>ru.lanit.samara.portlet.controller.ServiceProviderController</configuration-action-class>
+        <configuration-action-class>ru.lanit.samara.portlet.controller.ServiceCatalogController</configuration-action-class>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
         <header-portlet-javascript>/js/jquery-1.9.1.js</header-portlet-javascript>
@@ -13,7 +13,7 @@
         <header-portlet-javascript>/js/ui/jquery.ui.widget.js</header-portlet-javascript>
         <header-portlet-javascript>/js/ui/jquery.ui.accordion.js</header-portlet-javascript>
         <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
-		<css-class-wrapper>service-provider-portlet</css-class-wrapper>
+		<css-class-wrapper>service-catalog-portlet</css-class-wrapper>
 	</portlet>
 	<role-mapper>
 		<role-name>administrator</role-name>

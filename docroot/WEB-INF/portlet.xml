@@ -2,9 +2,9 @@
 
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
-		<portlet-name>service-provider</portlet-name>
-		<display-name>Service Provider Portlet</display-name>
-		<portlet-class>ru.lanit.samara.portlet.controller.ServiceProviderController</portlet-class>
+		<portlet-name>service-catalog</portlet-name>
+		<display-name>Service Catalog Portlet</display-name>
+		<portlet-class>ru.lanit.samara.portlet.controller.ServiceCatalogController</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/view.jsp</value>
@@ -18,9 +18,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>Service Provider Portlet</title>
-			<short-title>Service Provider Portlet</short-title>
-			<keywords>Service Provider Portlet</keywords>
+			<title>Service Catalog Portlet</title>
+			<short-title>Service Catalog Portlet</short-title>
+			<keywords>Service Catalog Portlet</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>

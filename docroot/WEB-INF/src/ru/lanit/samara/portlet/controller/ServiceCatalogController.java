@@ -10,7 +10,7 @@ import java.io.IOException;
 /**
  * Created by Galimov Ruslan
  */
-public class ServiceProviderController extends MVCPortlet implements ConfigurationAction {
+public class ServiceCatalogController extends MVCPortlet implements ConfigurationAction {
 
     @Override
     public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {

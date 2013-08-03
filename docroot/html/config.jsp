@@ -2,4 +2,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Service Provider Portlet</b> portlet.
+This is the <b>Service Catalog Portlet</b> portlet.
