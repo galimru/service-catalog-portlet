@@ -27,8 +27,9 @@ public class ServiceCatalogController extends MVCPortlet implements Configuratio
         return "/html/config.jsp";
     }
 
-    public void sendHello(ActionRequest request, ActionResponse response) {
-        String username = ParamUtil.get(request, "username", "empty");
-        request.setAttribute("username", username);
+    public void details(ActionRequest request, ActionResponse response) {
+        String code = ParamUtil.get(request, "code", "empty");
+        request.setAttribute("code", code);
+        response.setRenderParameter("jspPage", "/html/details.jsp");
     }
 }
