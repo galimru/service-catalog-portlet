@@ -24,7 +24,7 @@
     background: url("../img/rubber-button.png") no-repeat scroll 0 0 #e2edfa;
     cursor: pointer;
     margin-top: 10px;
-    padding: 1em 1em 1em 1em;
+    padding: .5em;
     min-height: 0; /* support: IE7 */
     font-size: 14px;
     font-weight: 700;
@@ -33,12 +33,11 @@
 }
 
 .ui-accordion .ui-accordion-content {
-    /*padding: 1em 2.2em;*/
-    padding: 2px 14px 0;
+    padding: 1em 2.2em;
     border-top: 0;
     overflow: auto;
     position: relative;
-    font-size: 100%;
+    font-size: 12px;
     background: none repeat scroll 0 0 #ffffff;
     border-color: #a8d5e0;
     border-radius: 0 0 5px 5px;
@@ -64,6 +63,10 @@
     color: #cd2532;
 }
 
+.catalog-item-content div:first-child {
+    border: 0;
+}
+
 .catalog-column-left, .catalog-column-right {
     float: left;
     width: 300px;
@@ -71,6 +74,7 @@
 }
 
 .service-item {
+    border-top: 1px solid #dbe1e6;
     cursor: pointer;
 }
 
