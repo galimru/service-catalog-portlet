@@ -10,6 +10,7 @@
     $(function() {
         $("#catalog-wrap").accordion({
             active: false,
+            icons: false,
             collapsible: true,
             heightStyle: "content",
             header: ".catalog-item-header"
@@ -31,14 +32,32 @@
 
 <div id="catalog-wrap">
     <div class="catalog-column-left">
-        <h3 class="catalog-item-header">Department 1</h3>
+        <div class="catalog-item-header">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="ui-icon"></td>
+                    <td class="ui-text">Department 1</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="catalog-item-content">
             <div class="service-item"><a onclick="${ns}showDetails('s1');">Service 1</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s2');">Service 2</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s3');">Service 3</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s4');">Service 4</a></div>
         </div>
-        <h3 class="catalog-item-header">Department 2</h3>
+        <div class="catalog-item-header">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="ui-icon"></td>
+                    <td class="ui-text">Department 2</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="catalog-item-content">
             <div class="service-item"><a onclick="${ns}showDetails('s5');">Service 5</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s6');">Service 6</a></div>
@@ -47,14 +66,32 @@
         </div>
     </div>
     <div class="catalog-column-right">
-        <h3 class="catalog-item-header">Department 3</h3>
+        <div class="catalog-item-header">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="ui-icon"></td>
+                    <td class="ui-text">Department 3</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="catalog-item-content">
             <div class="service-item"><a onclick="${ns}showDetails('s9');">Service 9</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s10');">Service 10</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s11');">Service 11</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s12');">Service 12</a></div>
         </div>
-        <h3 class="catalog-item-header">Department 4</h3>
+        <div class="catalog-item-header">
+            <table>
+                <tbody>
+                <tr>
+                    <td class="ui-icon"></td>
+                    <td class="ui-text">Department 4</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="catalog-item-content">
             <div class="service-item"><a onclick="${ns}showDetails('s13');">Service 13</a></div>
             <div class="service-item"><a onclick="${ns}showDetails('s14');">Service 14</a></div>

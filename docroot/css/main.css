@@ -1,5 +1,3 @@
-/* Helper */
-
 .ui-helper-reset {
     margin: 0;
     padding: 0;
@@ -11,14 +9,10 @@
     list-style: none;
 }
 
-/* Widget */
-
 .ui-widget {
     font-family: Arial,Helvetica,sans-serif;
     font-size: 1.1em;
 }
-
-/* Accordion */
 
 .ui-accordion .ui-accordion-header {
     display: block;
@@ -29,12 +23,12 @@
     border-color: #ffffff #d6e5f5 #a6bad0;
     background: url("../img/rubber-button.png") no-repeat scroll 0 0 #e2edfa;
     cursor: pointer;
-    margin-top: 4px;
+    margin-top: 10px;
     padding: 1em 1em 1em 1em;
     min-height: 0; /* support: IE7 */
     font-size: 14px;
     font-weight: 700;
-    text-shadow: 0 1px 0 #FFFFFF;
+    text-shadow: 0 1px 0 #ffffff;
     z-index: 2;
 }
 
@@ -53,52 +47,32 @@
     top: -3px;
 }
 
-.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
-    position: absolute;
-    left: .5em;
-    /*top: 50%;*/
-    margin-top: -8px;
-}
-
-.ui-accordion .ui-accordion-icons {
-    padding-left: 2.2em;
-}
-
 .ui-icon {
     width: 38px;
     height: 40px;
-    display: block;
+    padding-right: 10px;
     text-indent: -99999px;
     overflow: hidden;
-    background: url(../img/department.png) no-repeat;
+    background: url(../img/department.png) no-repeat left center;
 }
-
-/* State */
 
 .ui-state-default {
     color: #000000;
 }
+
 .ui-state-hover {
     color: #cd2532;
 }
 
-/* Item */
-
 .catalog-column-left, .catalog-column-right {
     float: left;
     width: 300px;
-    padding: 4px;
-    background: none repeat scroll 0 0 #F6FAFF;
-    border: 1px solid #C2E6EF;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 5px;
 }
+
 .service-item {
     cursor: pointer;
 }
-
-/* Corner */
 
 .ui-corner-all,
 .ui-corner-top,
@@ -106,18 +80,21 @@
 .ui-corner-tl {
     border-top-left-radius: 5px;
 }
+
 .ui-corner-all,
 .ui-corner-top,
 .ui-corner-right,
 .ui-corner-tr {
     border-top-right-radius: 5px;
 }
+
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-left,
 .ui-corner-bl {
     border-bottom-left-radius: 5px;
 }
+
 .ui-corner-all,
 .ui-corner-bottom,
 .ui-corner-right,
