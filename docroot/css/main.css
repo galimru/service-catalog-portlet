@@ -7,11 +7,45 @@
     text-decoration: none;
     font-size: 100%;
     list-style: none;
+    text-align: left;
+}
+
+.catalog-wrap {
+    text-align: center;
+}
+
+.catalog-item-content div:first-child {
+    border: 0;
+}
+
+.catalog-column {
+    float: left;
+    width: 300px;
+    margin: 5px;
+}
+
+.service-item {
+    border-top: 1px solid #dbe1e6;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.service-item:hover {
+    text-decoration: underline;
 }
 
 .ui-widget {
     font-family: Arial,Helvetica,sans-serif;
     font-size: 1.1em;
+    display: inline-block;
+    margin: 0 auto;
+    background-color: #f6faff;
+    border-radius: 5px;
+    border: 1px solid #c2e6ef;
+}
+
+.ui-accordion .ui-accordion-header:first-child {
+    margin-top: 0;
 }
 
 .ui-accordion .ui-accordion-header {
@@ -33,7 +67,7 @@
 }
 
 .ui-accordion .ui-accordion-content {
-    padding: 1em 2.2em;
+    padding: 1em;
     border-top: 0;
     overflow: auto;
     position: relative;
@@ -55,27 +89,27 @@
     background: url(../img/department.png) no-repeat left center;
 }
 
+.ui-arrow {
+    height: 14px;
+    width: 14px;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    text-indent: -99999px;
+    background: url(../img/arrows.png) no-repeat scroll left top transparent;
+}
+
+.ui-state-active .ui-arrow {
+    background-position: right top;
+}
+
 .ui-state-default {
     color: #000000;
 }
 
 .ui-state-hover {
     color: #cd2532;
-}
-
-.catalog-item-content div:first-child {
-    border: 0;
-}
-
-.catalog-column-left, .catalog-column-right {
-    float: left;
-    width: 300px;
-    margin: 5px;
-}
-
-.service-item {
-    border-top: 1px solid #dbe1e6;
-    cursor: pointer;
 }
 
 .ui-corner-all,

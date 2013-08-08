@@ -8,7 +8,7 @@
 
 <aui:script>
     $(function() {
-        $("#catalog-wrap").accordion({
+        $("#catalog-widget").accordion({
             active: false,
             icons: false,
             collapsible: true,
@@ -30,73 +30,79 @@
     <aui:input name="code" type="hidden"/>
 </aui:form>
 
-<div id="catalog-wrap">
-    <div class="catalog-column-left">
-        <div class="catalog-item-header">
-            <table>
-                <tbody>
-                <tr>
-                    <td class="ui-icon"></td>
-                    <td class="ui-text">Department 1</td>
-                </tr>
-                </tbody>
-            </table>
+<div class="catalog-wrap">
+    <div id="catalog-widget">
+        <div class="catalog-column">
+            <div class="catalog-item-header">
+                <div class="ui-arrow"></div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="ui-icon"></td>
+                        <td class="ui-text">Department 1</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="catalog-item-content">
+                <div class="service-item" onclick="${ns}showDetails('s1');">Service 1</div>
+                <div class="service-item" onclick="${ns}showDetails('s2');">Service 2</div>
+                <div class="service-item" onclick="${ns}showDetails('s3');">Service 3</div>
+                <div class="service-item" onclick="${ns}showDetails('s4');">Service 4</div>
+            </div>
+            <div class="catalog-item-header">
+                <div class="ui-arrow"></div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="ui-icon"></td>
+                        <td class="ui-text">Department 2</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="catalog-item-content">
+                <div class="service-item" onclick="${ns}showDetails('s5');">Service 5</div>
+                <div class="service-item" onclick="${ns}showDetails('s6');">Service 6</div>
+                <div class="service-item" onclick="${ns}showDetails('s7');">Service 7</div>
+                <div class="service-item" onclick="${ns}showDetails('s8');">Service 8</div>
+            </div>
         </div>
-        <div class="catalog-item-content">
-            <div class="service-item"><a onclick="${ns}showDetails('s1');">Service 1</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s2');">Service 2</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s3');">Service 3</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s4');">Service 4</a></div>
-        </div>
-        <div class="catalog-item-header">
-            <table>
-                <tbody>
-                <tr>
-                    <td class="ui-icon"></td>
-                    <td class="ui-text">Department 2</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="catalog-item-content">
-            <div class="service-item"><a onclick="${ns}showDetails('s5');">Service 5</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s6');">Service 6</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s7');">Service 7</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s8');">Service 8</a></div>
-        </div>
-    </div>
-    <div class="catalog-column-right">
-        <div class="catalog-item-header">
-            <table>
-                <tbody>
-                <tr>
-                    <td class="ui-icon"></td>
-                    <td class="ui-text">Department 3</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="catalog-item-content">
-            <div class="service-item"><a onclick="${ns}showDetails('s9');">Service 9</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s10');">Service 10</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s11');">Service 11</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s12');">Service 12</a></div>
-        </div>
-        <div class="catalog-item-header">
-            <table>
-                <tbody>
-                <tr>
-                    <td class="ui-icon"></td>
-                    <td class="ui-text">Department 4</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="catalog-item-content">
-            <div class="service-item"><a onclick="${ns}showDetails('s13');">Service 13</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s14');">Service 14</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s15');">Service 15</a></div>
-            <div class="service-item"><a onclick="${ns}showDetails('s16');">Service 16</a></div>
+        <div class="catalog-column">
+            <div class="catalog-item-header">
+                <div class="ui-arrow"></div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="ui-icon"></td>
+                        <td class="ui-text">Department 3</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="catalog-item-content">
+                <div class="service-item" onclick="${ns}showDetails('s9');">Service 9</div>
+                <div class="service-item" onclick="${ns}showDetails('s10');">Service 10</div>
+                <div class="service-item" onclick="${ns}showDetails('s11');">Service 11</div>
+                <div class="service-item" onclick="${ns}showDetails('s12');">Service 12</div>
+            </div>
+            <div class="catalog-item-header">
+                <div class="ui-arrow"></div>
+                <table>
+                    <tbody>
+                    <tr>
+                        <td class="ui-icon"></td>
+                        <td class="ui-text">Department 4</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="catalog-item-content">
+                <div class="service-item" onclick="${ns}showDetails('s13');">Service 13</div>
+                <div class="service-item" onclick="${ns}showDetails('s14');">Service 14</div>
+                <div class="service-item" onclick="${ns}showDetails('s15');">Service 15</div>
+                <div class="service-item" onclick="${ns}showDetails('s16');">Service 16</div>
+            </div>
         </div>
     </div>
 </div>
