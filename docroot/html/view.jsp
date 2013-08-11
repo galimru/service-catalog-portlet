@@ -13,7 +13,7 @@
             icons: false,
             collapsible: true,
             heightStyle: "content",
-            header: ".catalog-item-header"
+            header: ".catalog-header"
         });
     });
 </aui:script>
@@ -33,8 +33,7 @@
 <div class="catalog-wrap">
     <div id="catalog-widget">
         <div class="catalog-column">
-            <div class="catalog-item-header">
-                <div class="ui-arrow"></div>
+            <div class="catalog-header">
                 <table>
                     <tbody>
                     <tr>
@@ -43,15 +42,15 @@
                     </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class="catalog-item-content">
-                <div class="service-item" onclick="${ns}showDetails('s1');">Service 1</div>
-                <div class="service-item" onclick="${ns}showDetails('s2');">Service 2</div>
-                <div class="service-item" onclick="${ns}showDetails('s3');">Service 3</div>
-                <div class="service-item" onclick="${ns}showDetails('s4');">Service 4</div>
-            </div>
-            <div class="catalog-item-header">
                 <div class="ui-arrow"></div>
+            </div>
+            <div class="catalog-content">
+                <div onclick="${ns}showDetails('s1');">Service 1</div>
+                <div onclick="${ns}showDetails('s2');">Service 2</div>
+                <div onclick="${ns}showDetails('s3');">Service 3</div>
+                <div onclick="${ns}showDetails('s4');">Service 4</div>
+            </div>
+            <div class="catalog-header">
                 <table>
                     <tbody>
                     <tr>
@@ -60,17 +59,17 @@
                     </tr>
                     </tbody>
                 </table>
+                <div class="ui-arrow"></div>
             </div>
-            <div class="catalog-item-content">
-                <div class="service-item" onclick="${ns}showDetails('s5');">Service 5</div>
-                <div class="service-item" onclick="${ns}showDetails('s6');">Service 6</div>
-                <div class="service-item" onclick="${ns}showDetails('s7');">Service 7</div>
-                <div class="service-item" onclick="${ns}showDetails('s8');">Service 8</div>
+            <div class="catalog-content">
+                <div onclick="${ns}showDetails('s5');">Service 5</div>
+                <div onclick="${ns}showDetails('s6');">Service 6</div>
+                <div onclick="${ns}showDetails('s7');">Service 7</div>
+                <div onclick="${ns}showDetails('s8');">Service 8</div>
             </div>
         </div>
         <div class="catalog-column">
-            <div class="catalog-item-header">
-                <div class="ui-arrow"></div>
+            <div class="catalog-header">
                 <table>
                     <tbody>
                     <tr>
@@ -79,15 +78,15 @@
                     </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class="catalog-item-content">
-                <div class="service-item" onclick="${ns}showDetails('s9');">Service 9</div>
-                <div class="service-item" onclick="${ns}showDetails('s10');">Service 10</div>
-                <div class="service-item" onclick="${ns}showDetails('s11');">Service 11</div>
-                <div class="service-item" onclick="${ns}showDetails('s12');">Service 12</div>
-            </div>
-            <div class="catalog-item-header">
                 <div class="ui-arrow"></div>
+            </div>
+            <div class="catalog-content">
+                <div onclick="${ns}showDetails('s9');">Service 9</div>
+                <div onclick="${ns}showDetails('s10');">Service 10</div>
+                <div onclick="${ns}showDetails('s11');">Service 11</div>
+                <div onclick="${ns}showDetails('s12');">Service 12</div>
+            </div>
+            <div class="catalog-header">
                 <table>
                     <tbody>
                     <tr>
@@ -96,12 +95,13 @@
                     </tr>
                     </tbody>
                 </table>
+                <div class="ui-arrow"></div>
             </div>
-            <div class="catalog-item-content">
-                <div class="service-item" onclick="${ns}showDetails('s13');">Service 13</div>
-                <div class="service-item" onclick="${ns}showDetails('s14');">Service 14</div>
-                <div class="service-item" onclick="${ns}showDetails('s15');">Service 15</div>
-                <div class="service-item" onclick="${ns}showDetails('s16');">Service 16</div>
+            <div class="catalog-content">
+                <div onclick="${ns}showDetails('s13');">Service 13</div>
+                <div onclick="${ns}showDetails('s14');">Service 14</div>
+                <div onclick="${ns}showDetails('s15');">Service 15</div>
+                <div onclick="${ns}showDetails('s16');">Service 16</div>
             </div>
         </div>
     </div>

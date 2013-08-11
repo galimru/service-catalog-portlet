@@ -10,30 +10,6 @@
     text-align: left;
 }
 
-.catalog-wrap {
-    text-align: center;
-}
-
-.catalog-item-content div:first-child {
-    border: 0;
-}
-
-.catalog-column {
-    float: left;
-    width: 300px;
-    margin: 5px;
-}
-
-.service-item {
-    border-top: 1px solid #dbe1e6;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.service-item:hover {
-    text-decoration: underline;
-}
-
 .ui-widget {
     font-family: Arial,Helvetica,sans-serif;
     font-size: 1.1em;
@@ -110,6 +86,30 @@
 
 .ui-state-hover {
     color: #cd2532;
+}
+
+.catalog-wrap {
+    text-align: center;
+}
+
+.catalog-column {
+    float: left;
+    width: 300px;
+    margin: 5px;
+}
+
+.catalog-content div {
+    border-top: 1px solid #dbe1e6;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.catalog-content div:hover {
+    text-decoration: underline;
+}
+
+.catalog-content div:first-child {
+    border: 0;
 }
 
 .ui-corner-all,
