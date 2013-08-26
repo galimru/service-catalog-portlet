@@ -14,19 +14,21 @@ public class WebServiceCacheItem implements WebCacheItem {
     public static final String CACHE_KEY = "CATALOG_SERVICE";
     private static final long DEFAULT_REFRESH_TIME = 60000;
 
+    private String wsUrl;
     private long refreshTime;
 
-    public WebServiceCacheItem(long refreshTime) {
-        this.refreshTime = refreshTime;
+    public WebServiceCacheItem(String wsUrl) {
+        this(wsUrl, DEFAULT_REFRESH_TIME);
     }
 
-    public WebServiceCacheItem() {
-        this(DEFAULT_REFRESH_TIME);
+    public WebServiceCacheItem(String wsUrl, long refreshTime) {
+        this.wsUrl = wsUrl;
+        this.refreshTime = refreshTime;
     }
 
     @Override
     public Object convert(String s) throws WebCacheException {
-        return AxisUtil.fetch();
+        return AxisUtil.fetch(wsUrl);
     }
 
     @Override

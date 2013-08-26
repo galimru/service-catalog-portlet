@@ -8,8 +8,11 @@ import ru.lanit.samara.portlet.model.Catalog;
 import ru.lanit.samara.portlet.webservice.ServiceCatalog_PortType;
 import ru.lanit.samara.portlet.webservice.ServiceCatalog_ServiceLocator;
 import ru.lanit.samara.portlet.webservice.ServiceEntry;
+import ru.lanit.samara.portlet.webservice.ServiceFault;
 
 import javax.xml.rpc.ServiceException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.rmi.RemoteException;
 
 /**
@@ -19,11 +22,11 @@ public class AxisUtil {
 
     private static final Log _log =  LogFactoryUtil.getLog(AxisUtil.class);
 
-    public static Object fetch() {
+    public static Object fetch(String wsUrl) {
         Catalog catalog = new Catalog();
         try {
             ServiceCatalog_ServiceLocator serviceLocator = new ServiceCatalog_ServiceLocator();
-            ServiceCatalog_PortType portType = serviceLocator.getServiceCatalogPort();
+            ServiceCatalog_PortType portType = serviceLocator.getServiceCatalogPort(new URL(wsUrl));
             ServiceEntry[] services = portType.getServices();
             CatalogBuilder builder = new CatalogBuilder(services);
             catalog = builder.build();
@@ -33,7 +36,27 @@ public class AxisUtil {
             e.printStackTrace();
         } catch (ServiceException e) {
             e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
         return catalog;
+    }
+
+    public static String serviceInfo(String wsUrl, String code) {
+        String serviceInfo = null;
+        try {
+            ServiceCatalog_ServiceLocator serviceLocator = new ServiceCatalog_ServiceLocator();
+            ServiceCatalog_PortType portType = serviceLocator.getServiceCatalogPort(new URL(wsUrl));
+            serviceInfo = portType.serviceInfo(code);
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (ServiceFault serviceFault) {
+            serviceFault.printStackTrace();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return serviceInfo;
     }
 }

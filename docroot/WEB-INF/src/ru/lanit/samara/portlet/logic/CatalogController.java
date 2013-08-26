@@ -3,9 +3,11 @@ package ru.lanit.samara.portlet.logic;
 import com.liferay.portal.kernel.portlet.ConfigurationAction;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.webcache.WebCachePoolUtil;
+import com.liferay.portlet.PortletPreferencesFactoryUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import ru.lanit.samara.portlet.cache.WebServiceCacheItem;
 import ru.lanit.samara.portlet.model.Catalog;
+import ru.lanit.samara.portlet.utils.AxisUtil;
 
 import javax.portlet.*;
 import java.io.IOException;
@@ -15,16 +17,25 @@ import java.io.IOException;
  */
 public class CatalogController extends MVCPortlet implements ConfigurationAction {
 
+    private String WS_URL = "http://localhost";
+
     @Override
     public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
-        Catalog catalog = (Catalog) WebCachePoolUtil.get(WebServiceCacheItem.CACHE_KEY, new WebServiceCacheItem());
+        WS_URL = renderRequest.getPreferences().getValue("wsurl", null);
+        Catalog catalog = (Catalog) WebCachePoolUtil.get(WebServiceCacheItem.CACHE_KEY, new WebServiceCacheItem(WS_URL));
         renderRequest.setAttribute("catalog", catalog);
         super.doView(renderRequest, renderResponse);
     }
 
     @Override
     public void processAction(PortletConfig portletConfig, ActionRequest request, ActionResponse response) throws Exception {
-        //To change body of implemented methods use File | Settings | File Templates.
+        String portletResource = ParamUtil.getString(request, "portletResource");
+        PortletPreferences prefs = PortletPreferencesFactoryUtil.getPortletSetup(request, portletResource);
+        String wsUrl = ParamUtil.getString(request, "wsurl");
+        prefs.setValue("wsurl", wsUrl);
+        prefs.store();
+        WS_URL = wsUrl;
+        System.out.println(wsUrl);
     }
 
     @Override
@@ -33,8 +44,10 @@ public class CatalogController extends MVCPortlet implements ConfigurationAction
     }
 
     public void details(ActionRequest request, ActionResponse response) {
+        WS_URL = request.getPreferences().getValue("wsurl", null);
         String code = ParamUtil.get(request, "code", "empty");
-        request.setAttribute("code", code);
+        String html = AxisUtil.serviceInfo(WS_URL, code);
+        request.setAttribute("code", html);
         response.setRenderParameter("jspPage", "/html/details.jsp");
     }
 }

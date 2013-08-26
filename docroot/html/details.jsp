@@ -1,5 +1,8 @@
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="lui" %>
 
 <portlet:defineObjects/>
 
-service-info: ${code}
+<input type="button" value="<lui:message key="back"/>" onclick="self.location = '<portlet:renderURL><portlet:param name="view" value="" /></portlet:renderURL>';"/>
+
+${code}

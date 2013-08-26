@@ -1,0 +1,137 @@
+<definitions name='ServiceCatalog' targetNamespace='http://catalog.portal.cp.org/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://catalog.portal.cp.org/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://catalog.portal.cp.org/' version='1.0' xmlns:tns='http://catalog.portal.cp.org/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='createServiceException' nillable='true' type='tns:ServiceFault'/>
+   <xs:element name='getServices' type='tns:getServices'/>
+   <xs:element name='getServicesResponse' type='tns:getServicesResponse'/>
+   <xs:element name='serviceInfo' type='tns:serviceInfo'/>
+   <xs:element name='serviceInfoResponse' type='tns:serviceInfoResponse'/>
+   <xs:complexType name='getServices'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='getServicesResponse'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:serviceEntry'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='serviceEntry'>
+    <xs:sequence>
+     <xs:element name='applicants'>
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element maxOccurs='unbounded' minOccurs='0' name='entry'>
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element minOccurs='0' name='key' type='xs:string'/>
+           <xs:element minOccurs='0' name='value' type='xs:string'/>
+          </xs:sequence>
+         </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+     <xs:element name='categories'>
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element maxOccurs='unbounded' minOccurs='0' name='entry'>
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element minOccurs='0' name='key' type='xs:string'/>
+           <xs:element minOccurs='0' name='value' type='xs:string'/>
+          </xs:sequence>
+         </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+     <xs:element minOccurs='0' name='code' type='xs:string'/>
+     <xs:element name='departments'>
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element maxOccurs='unbounded' minOccurs='0' name='entry'>
+         <xs:complexType>
+          <xs:sequence>
+           <xs:element minOccurs='0' name='key' type='xs:string'/>
+           <xs:element minOccurs='0' name='value' type='xs:string'/>
+          </xs:sequence>
+         </xs:complexType>
+        </xs:element>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+     <xs:element minOccurs='0' name='name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='serviceInfo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='code' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='serviceInfoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ServiceFault'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='message' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='createServiceException'>
+  <part element='tns:createServiceException' name='createServiceException'></part>
+ </message>
+ <message name='ServiceCatalog_serviceInfoResponse'>
+  <part element='tns:serviceInfoResponse' name='serviceInfoResponse'></part>
+ </message>
+ <message name='ServiceCatalog_getServices'>
+  <part element='tns:getServices' name='getServices'></part>
+ </message>
+ <message name='ServiceCatalog_serviceInfo'>
+  <part element='tns:serviceInfo' name='serviceInfo'></part>
+ </message>
+ <message name='ServiceCatalog_getServicesResponse'>
+  <part element='tns:getServicesResponse' name='getServicesResponse'></part>
+ </message>
+ <portType name='ServiceCatalog'>
+  <operation name='getServices' parameterOrder='getServices'>
+   <input message='tns:ServiceCatalog_getServices'></input>
+   <output message='tns:ServiceCatalog_getServicesResponse'></output>
+  </operation>
+  <operation name='serviceInfo' parameterOrder='serviceInfo'>
+   <input message='tns:ServiceCatalog_serviceInfo'></input>
+   <output message='tns:ServiceCatalog_serviceInfoResponse'></output>
+   <fault message='tns:createServiceException' name='createServiceException'></fault>
+  </operation>
+ </portType>
+ <binding name='ServiceCatalogBinding' type='tns:ServiceCatalog'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='getServices'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='serviceInfo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='createServiceException'>
+    <soap:fault name='createServiceException' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='ServiceCatalog'>
+  <port binding='tns:ServiceCatalogBinding' name='ServiceCatalogPort'>
+   <soap:address location='http://127.0.0.1/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog'/>
+  </port>
+ </service>
+</definitions>
