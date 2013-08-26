@@ -65,6 +65,10 @@
     background: url(../img/department.png) no-repeat left center;
 }
 
+.ui-text {
+    padding-right: 50px;
+}
+
 .ui-arrow {
     height: 14px;
     width: 14px;

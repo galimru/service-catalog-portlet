@@ -4,7 +4,7 @@
 	<portlet>
 		<portlet-name>service-catalog</portlet-name>
 		<display-name>Service Catalog Portlet</display-name>
-		<portlet-class>ru.lanit.samara.portlet.controller.ServiceCatalogController</portlet-class>
+		<portlet-class>ru.lanit.samara.portlet.controller.CatalogController</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/view.jsp</value>

@@ -33,76 +33,48 @@
 <div class="catalog-wrap">
     <div id="catalog-widget">
         <div class="catalog-column">
-            <div class="catalog-header">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class="ui-icon"></td>
-                        <td class="ui-text">Department 1</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="ui-arrow"></div>
-            </div>
-            <div class="catalog-content">
-                <div onclick="${ns}showDetails('s1');">Service 1</div>
-                <div onclick="${ns}showDetails('s2');">Service 2</div>
-                <div onclick="${ns}showDetails('s3');">Service 3</div>
-                <div onclick="${ns}showDetails('s4');">Service 4</div>
-            </div>
-            <div class="catalog-header">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class="ui-icon"></td>
-                        <td class="ui-text">Department 2</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="ui-arrow"></div>
-            </div>
-            <div class="catalog-content">
-                <div onclick="${ns}showDetails('s5');">Service 5</div>
-                <div onclick="${ns}showDetails('s6');">Service 6</div>
-                <div onclick="${ns}showDetails('s7');">Service 7</div>
-                <div onclick="${ns}showDetails('s8');">Service 8</div>
-            </div>
+            <c:forEach items="${catalog.departments}" var="department" varStatus="loop">
+                <c:if test="${loop.index % 2 == 0}">
+                    <div class="catalog-header">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="ui-icon"></td>
+                                <td class="ui-text">${department.name}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="ui-arrow"></div>
+                    </div>
+                    <div class="catalog-content">
+                        <c:forEach items="${department.services}" var="service">
+                        <div onclick="${ns}showDetails('${service.code}');">${service.name}</div>
+                        </c:forEach>
+                    </div>
+                </c:if>
+            </c:forEach>
         </div>
         <div class="catalog-column">
-            <div class="catalog-header">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class="ui-icon"></td>
-                        <td class="ui-text">Department 3</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="ui-arrow"></div>
-            </div>
-            <div class="catalog-content">
-                <div onclick="${ns}showDetails('s9');">Service 9</div>
-                <div onclick="${ns}showDetails('s10');">Service 10</div>
-                <div onclick="${ns}showDetails('s11');">Service 11</div>
-                <div onclick="${ns}showDetails('s12');">Service 12</div>
-            </div>
-            <div class="catalog-header">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class="ui-icon"></td>
-                        <td class="ui-text">Department 4</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="ui-arrow"></div>
-            </div>
-            <div class="catalog-content">
-                <div onclick="${ns}showDetails('s13');">Service 13</div>
-                <div onclick="${ns}showDetails('s14');">Service 14</div>
-                <div onclick="${ns}showDetails('s15');">Service 15</div>
-                <div onclick="${ns}showDetails('s16');">Service 16</div>
-            </div>
+            <c:forEach items="${catalog.departments}" var="department" varStatus="loop">
+                <c:if test="${loop.index % 2 == 1}">
+                    <div class="catalog-header">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="ui-icon"></td>
+                                <td class="ui-text">${department.name}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div class="ui-arrow"></div>
+                    </div>
+                    <div class="catalog-content">
+                        <c:forEach items="${department.services}" var="service">
+                            <div onclick="${ns}showDetails('${service.code}');">${service.name}</div>
+                        </c:forEach>
+                    </div>
+                </c:if>
+            </c:forEach>
         </div>
     </div>
 </div>
