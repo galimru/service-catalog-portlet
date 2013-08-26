@@ -1,4 +1,4 @@
-package ru.lanit.samara.portlet.controller;
+package ru.lanit.samara.portlet.logic;
 
 import com.liferay.portal.kernel.portlet.ConfigurationAction;
 import com.liferay.portal.kernel.util.ParamUtil;

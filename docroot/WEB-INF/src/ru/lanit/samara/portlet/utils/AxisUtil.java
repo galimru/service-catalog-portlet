@@ -3,7 +3,7 @@ package ru.lanit.samara.portlet.utils;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import org.apache.axis.AxisFault;
-import ru.lanit.samara.portlet.controller.CatalogBuilder;
+import ru.lanit.samara.portlet.logic.CatalogBuilder;
 import ru.lanit.samara.portlet.model.Catalog;
 import ru.lanit.samara.portlet.webservice.ServiceCatalog_PortType;
 import ru.lanit.samara.portlet.webservice.ServiceCatalog_ServiceLocator;

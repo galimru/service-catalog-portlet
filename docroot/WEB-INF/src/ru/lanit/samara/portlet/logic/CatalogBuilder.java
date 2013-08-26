@@ -1,4 +1,4 @@
-package ru.lanit.samara.portlet.controller;
+package ru.lanit.samara.portlet.logic;
 
 import ru.lanit.samara.portlet.model.Catalog;
 import ru.lanit.samara.portlet.model.Department;

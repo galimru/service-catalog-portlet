@@ -5,7 +5,7 @@
 	<portlet>
 		<portlet-name>service-catalog</portlet-name>
 		<icon>/icon.png</icon>
-        <configuration-action-class>ru.lanit.samara.portlet.controller.CatalogController</configuration-action-class>
+        <configuration-action-class>ru.lanit.samara.portlet.logic.CatalogController</configuration-action-class>
 		<instanceable>false</instanceable>
 		<header-portlet-css>/css/main.css</header-portlet-css>
         <header-portlet-javascript>/js/jquery-1.9.1.js</header-portlet-javascript>
