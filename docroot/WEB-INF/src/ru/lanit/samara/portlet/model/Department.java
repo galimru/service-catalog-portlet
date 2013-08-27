@@ -7,25 +7,15 @@ import java.util.List;
  */
 public class Department {
 
-    private String code;
     private String name;
     private List<Service> services;
 
     public Department() {
     }
 
-    public Department(String code, String name, List<Service> services) {
-        this.code = code;
+    public Department(String name, List<Service> services) {
         this.name = name;
         this.services = services;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getName() {
@@ -49,12 +39,12 @@ public class Department {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Department that = (Department) o;
-        if (!code.equals(that.code)) return false;
+        if (!name.equals(that.name)) return false;
         return true;
     }
 
     @Override
     public int hashCode() {
-        return code.hashCode();
+        return name.hashCode();
     }
 }

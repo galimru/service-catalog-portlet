@@ -7,8 +7,8 @@ import ru.lanit.samara.portlet.logic.CatalogBuilder;
 import ru.lanit.samara.portlet.model.Catalog;
 import ru.lanit.samara.portlet.webservice.ServiceCatalog_PortType;
 import ru.lanit.samara.portlet.webservice.ServiceCatalog_ServiceLocator;
-import ru.lanit.samara.portlet.webservice.ServiceEntry;
 import ru.lanit.samara.portlet.webservice.ServiceFault;
+import ru.lanit.samara.portlet.webservice.ServiceItem;
 
 import javax.xml.rpc.ServiceException;
 import java.net.MalformedURLException;
@@ -22,12 +22,12 @@ public class AxisUtil {
 
     private static final Log _log =  LogFactoryUtil.getLog(AxisUtil.class);
 
-    public static Object fetch(String wsUrl) {
+    public static Catalog getServices(String wsUrl, String owner) {
         Catalog catalog = new Catalog();
         try {
             ServiceCatalog_ServiceLocator serviceLocator = new ServiceCatalog_ServiceLocator();
             ServiceCatalog_PortType portType = serviceLocator.getServiceCatalogPort(new URL(wsUrl));
-            ServiceEntry[] services = portType.getServices();
+            ServiceItem[] services = portType.getServices(owner);
             CatalogBuilder builder = new CatalogBuilder(services);
             catalog = builder.build();
         } catch (AxisFault axisFault) {

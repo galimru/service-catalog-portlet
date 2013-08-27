@@ -25,8 +25,11 @@ public class ServiceCatalogBindingStub extends org.apache.axis.client.Stub imple
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getServices");
-        oper.setReturnType(new javax.xml.namespace.QName("http://catalog.portal.cp.org/", "serviceEntry"));
-        oper.setReturnClass(ru.lanit.samara.portlet.webservice.ServiceEntry[].class);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "owner"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://catalog.portal.cp.org/", "serviceItem"));
+        oper.setReturnClass(ru.lanit.samara.portlet.webservice.ServiceItem[].class);
         oper.setReturnQName(new javax.xml.namespace.QName("", "return"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
@@ -81,64 +84,16 @@ public class ServiceCatalogBindingStub extends org.apache.axis.client.Stub imple
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">>serviceEntry>applicants>entry");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntryApplicantsEntry.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">>serviceEntry>categories>entry");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntryCategoriesEntry.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">>serviceEntry>departments>entry");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntryDepartmentsEntry.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">serviceEntry>applicants");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntryApplicantsEntry[].class;
-            cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">>serviceEntry>applicants>entry");
-            qName2 = new javax.xml.namespace.QName("", "entry");
-            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
-            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
-
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">serviceEntry>categories");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntryCategoriesEntry[].class;
-            cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">>serviceEntry>categories>entry");
-            qName2 = new javax.xml.namespace.QName("", "entry");
-            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
-            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
-
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">serviceEntry>departments");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntryDepartmentsEntry[].class;
-            cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", ">>serviceEntry>departments>entry");
-            qName2 = new javax.xml.namespace.QName("", "entry");
-            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
-            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
-
-            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", "serviceEntry");
-            cachedSerQNames.add(qName);
-            cls = ru.lanit.samara.portlet.webservice.ServiceEntry.class;
-            cachedSerClasses.add(cls);
-            cachedSerFactories.add(beansf);
-            cachedDeserFactories.add(beandf);
-
             qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", "ServiceFault");
             cachedSerQNames.add(qName);
             cls = ru.lanit.samara.portlet.webservice.ServiceFault.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://catalog.portal.cp.org/", "serviceItem");
+            cachedSerQNames.add(qName);
+            cls = ru.lanit.samara.portlet.webservice.ServiceItem.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -209,7 +164,7 @@ public class ServiceCatalogBindingStub extends org.apache.axis.client.Stub imple
         }
     }
 
-    public ru.lanit.samara.portlet.webservice.ServiceEntry[] getServices() throws java.rmi.RemoteException {
+    public ru.lanit.samara.portlet.webservice.ServiceItem[] getServices(java.lang.String owner) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -225,7 +180,7 @@ public class ServiceCatalogBindingStub extends org.apache.axis.client.Stub imple
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {owner});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -233,9 +188,9 @@ public class ServiceCatalogBindingStub extends org.apache.axis.client.Stub imple
         else {
             extractAttachments(_call);
             try {
-                return (ru.lanit.samara.portlet.webservice.ServiceEntry[]) _resp;
+                return (ru.lanit.samara.portlet.webservice.ServiceItem[]) _resp;
             } catch (java.lang.Exception _exception) {
-                return (ru.lanit.samara.portlet.webservice.ServiceEntry[]) org.apache.axis.utils.JavaUtils.convert(_resp, ru.lanit.samara.portlet.webservice.ServiceEntry[].class);
+                return (ru.lanit.samara.portlet.webservice.ServiceItem[]) org.apache.axis.utils.JavaUtils.convert(_resp, ru.lanit.samara.portlet.webservice.ServiceItem[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

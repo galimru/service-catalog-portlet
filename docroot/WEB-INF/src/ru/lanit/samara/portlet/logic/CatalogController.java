@@ -18,11 +18,13 @@ import java.io.IOException;
 public class CatalogController extends MVCPortlet implements ConfigurationAction {
 
     private String WS_URL = "http://localhost";
+    private String owner = "";
 
     @Override
     public void doView(RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException {
         WS_URL = renderRequest.getPreferences().getValue("wsurl", null);
-        Catalog catalog = (Catalog) WebCachePoolUtil.get(WebServiceCacheItem.CACHE_KEY, new WebServiceCacheItem(WS_URL));
+        owner = renderRequest.getPreferences().getValue("owner", null);
+        Catalog catalog = (Catalog) WebCachePoolUtil.get(WebServiceCacheItem.CACHE_KEY, new WebServiceCacheItem(WS_URL, owner));
         renderRequest.setAttribute("catalog", catalog);
         super.doView(renderRequest, renderResponse);
     }
@@ -32,10 +34,10 @@ public class CatalogController extends MVCPortlet implements ConfigurationAction
         String portletResource = ParamUtil.getString(request, "portletResource");
         PortletPreferences prefs = PortletPreferencesFactoryUtil.getPortletSetup(request, portletResource);
         String wsUrl = ParamUtil.getString(request, "wsurl");
+        String owner = ParamUtil.getString(request, "owner");
         prefs.setValue("wsurl", wsUrl);
+        prefs.setValue("owner", owner);
         prefs.store();
-        WS_URL = wsUrl;
-        System.out.println(wsUrl);
     }
 
     @Override

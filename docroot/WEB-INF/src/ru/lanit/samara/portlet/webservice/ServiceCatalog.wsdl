@@ -7,58 +7,19 @@
    <xs:element name='serviceInfo' type='tns:serviceInfo'/>
    <xs:element name='serviceInfoResponse' type='tns:serviceInfoResponse'/>
    <xs:complexType name='getServices'>
-    <xs:sequence/>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='owner' type='xs:string'/>
+    </xs:sequence>
    </xs:complexType>
    <xs:complexType name='getServicesResponse'>
     <xs:sequence>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:serviceEntry'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:serviceItem'/>
     </xs:sequence>
    </xs:complexType>
-   <xs:complexType name='serviceEntry'>
+   <xs:complexType name='serviceItem'>
     <xs:sequence>
-     <xs:element name='applicants'>
-      <xs:complexType>
-       <xs:sequence>
-        <xs:element maxOccurs='unbounded' minOccurs='0' name='entry'>
-         <xs:complexType>
-          <xs:sequence>
-           <xs:element minOccurs='0' name='key' type='xs:string'/>
-           <xs:element minOccurs='0' name='value' type='xs:string'/>
-          </xs:sequence>
-         </xs:complexType>
-        </xs:element>
-       </xs:sequence>
-      </xs:complexType>
-     </xs:element>
-     <xs:element name='categories'>
-      <xs:complexType>
-       <xs:sequence>
-        <xs:element maxOccurs='unbounded' minOccurs='0' name='entry'>
-         <xs:complexType>
-          <xs:sequence>
-           <xs:element minOccurs='0' name='key' type='xs:string'/>
-           <xs:element minOccurs='0' name='value' type='xs:string'/>
-          </xs:sequence>
-         </xs:complexType>
-        </xs:element>
-       </xs:sequence>
-      </xs:complexType>
-     </xs:element>
      <xs:element minOccurs='0' name='code' type='xs:string'/>
-     <xs:element name='departments'>
-      <xs:complexType>
-       <xs:sequence>
-        <xs:element maxOccurs='unbounded' minOccurs='0' name='entry'>
-         <xs:complexType>
-          <xs:sequence>
-           <xs:element minOccurs='0' name='key' type='xs:string'/>
-           <xs:element minOccurs='0' name='value' type='xs:string'/>
-          </xs:sequence>
-         </xs:complexType>
-        </xs:element>
-       </xs:sequence>
-      </xs:complexType>
-     </xs:element>
+     <xs:element minOccurs='0' name='department' type='xs:string'/>
      <xs:element minOccurs='0' name='name' type='xs:string'/>
     </xs:sequence>
    </xs:complexType>
@@ -131,7 +92,7 @@
  </binding>
  <service name='ServiceCatalog'>
   <port binding='tns:ServiceCatalogBinding' name='ServiceCatalogPort'>
-   <soap:address location='http://127.0.0.1/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog'/>
+   <soap:address location='http://127.0.0.1:8180/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog'/>
   </port>
  </service>
 </definitions>

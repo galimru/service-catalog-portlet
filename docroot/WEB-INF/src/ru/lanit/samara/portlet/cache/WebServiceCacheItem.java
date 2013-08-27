@@ -12,23 +12,29 @@ public class WebServiceCacheItem implements WebCacheItem {
     private static final long serialVersionUID = -4852509803968739089L;
 
     public static final String CACHE_KEY = "CATALOG_SERVICE";
-    private static final long DEFAULT_REFRESH_TIME = 60000;
+    private static final long DEFAULT_REFRESH_TIME = 300000;
 
     private String wsUrl;
+    private String owner;
     private long refreshTime;
 
     public WebServiceCacheItem(String wsUrl) {
-        this(wsUrl, DEFAULT_REFRESH_TIME);
+        this(wsUrl, null);
     }
 
-    public WebServiceCacheItem(String wsUrl, long refreshTime) {
+    public WebServiceCacheItem(String wsUrl, String owner) {
+        this(wsUrl, owner, DEFAULT_REFRESH_TIME);
+    }
+
+    public WebServiceCacheItem(String wsUrl, String owner, long refreshTime) {
         this.wsUrl = wsUrl;
+        this.owner = owner;
         this.refreshTime = refreshTime;
     }
 
     @Override
     public Object convert(String s) throws WebCacheException {
-        return AxisUtil.fetch(wsUrl);
+        return AxisUtil.getServices(wsUrl, owner);
     }
 
     @Override
