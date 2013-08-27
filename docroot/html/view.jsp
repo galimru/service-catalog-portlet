@@ -39,12 +39,12 @@
                         <table>
                             <tbody>
                             <tr>
-                                <td class="ui-icon"></td>
-                                <td class="ui-text">${department.name}</td>
+                                <td class="ui-department-icon"></td>
+                                <td class="ui-department-text">${department.name}</td>
                             </tr>
                             </tbody>
                         </table>
-                        <div class="ui-arrow"></div>
+                        <div class="ui-department-arrow"></div>
                     </div>
                     <div class="catalog-content">
                         <c:forEach items="${department.services}" var="service">
@@ -61,12 +61,12 @@
                         <table>
                             <tbody>
                             <tr>
-                                <td class="ui-icon"></td>
-                                <td class="ui-text">${department.name}</td>
+                                <td class="ui-department-icon"></td>
+                                <td class="ui-department-text">${department.name}</td>
                             </tr>
                             </tbody>
                         </table>
-                        <div class="ui-arrow"></div>
+                        <div class="ui-department-arrow"></div>
                     </div>
                     <div class="catalog-content">
                         <c:forEach items="${department.services}" var="service">
