@@ -32,9 +32,9 @@
 
 <div class="catalog-wrap">
     <div id="catalog-widget">
-        <div class="catalog-column">
+        <%--<div class="catalog-column">--%>
             <c:forEach items="${catalog.departments}" var="department" varStatus="loop">
-                <c:if test="${loop.index % 2 == 0}">
+                <%--<c:if test="${loop.index % 2 == 0}">--%>
                     <div class="catalog-header">
                         <table>
                             <tbody>
@@ -51,30 +51,30 @@
                         <div onclick="${ns}showDetails('${service.code}');">${service.name}</div>
                         </c:forEach>
                     </div>
-                </c:if>
+                <%--</c:if>--%>
             </c:forEach>
-        </div>
-        <div class="catalog-column">
-            <c:forEach items="${catalog.departments}" var="department" varStatus="loop">
-                <c:if test="${loop.index % 2 == 1}">
-                    <div class="catalog-header">
-                        <table>
-                            <tbody>
-                            <tr>
-                                <td class="ui-department-icon"></td>
-                                <td class="ui-department-text">${department.name}</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <div class="ui-department-arrow"></div>
-                    </div>
-                    <div class="catalog-content">
-                        <c:forEach items="${department.services}" var="service">
-                            <div onclick="${ns}showDetails('${service.code}');">${service.name}</div>
-                        </c:forEach>
-                    </div>
-                </c:if>
-            </c:forEach>
-        </div>
+        <%--</div>--%>
+        <%--<div class="catalog-column">--%>
+            <%--<c:forEach items="${catalog.departments}" var="department" varStatus="loop">--%>
+                <%--<c:if test="${loop.index % 2 == 1}">--%>
+                    <%--<div class="catalog-header">--%>
+                        <%--<table>--%>
+                            <%--<tbody>--%>
+                            <%--<tr>--%>
+                                <%--<td class="ui-department-icon"></td>--%>
+                                <%--<td class="ui-department-text">${department.name}</td>--%>
+                            <%--</tr>--%>
+                            <%--</tbody>--%>
+                        <%--</table>--%>
+                        <%--<div class="ui-department-arrow"></div>--%>
+                    <%--</div>--%>
+                    <%--<div class="catalog-content">--%>
+                        <%--<c:forEach items="${department.services}" var="service">--%>
+                            <%--<div onclick="${ns}showDetails('${service.code}');">${service.name}</div>--%>
+                        <%--</c:forEach>--%>
+                    <%--</div>--%>
+                <%--</c:if>--%>
+            <%--</c:forEach>--%>
+        <%--</div>--%>
     </div>
 </div>
