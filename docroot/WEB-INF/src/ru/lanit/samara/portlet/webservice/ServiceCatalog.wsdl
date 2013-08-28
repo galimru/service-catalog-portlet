@@ -13,14 +13,28 @@
    </xs:complexType>
    <xs:complexType name='getServicesResponse'>
     <xs:sequence>
-     <xs:element maxOccurs='unbounded' minOccurs='0' name='return' type='tns:serviceItem'/>
+     <xs:element minOccurs='0' name='return' type='tns:catalogItem'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='catalogItem'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='owners' nillable='true' type='tns:ownerItem'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='services' nillable='true' type='tns:serviceItem'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ownerItem'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='code' type='xs:string'/>
+     <xs:element minOccurs='0' name='name' type='xs:string'/>
     </xs:sequence>
    </xs:complexType>
    <xs:complexType name='serviceItem'>
     <xs:sequence>
-     <xs:element minOccurs='0' name='code' type='xs:string'/>
      <xs:element minOccurs='0' name='department' type='xs:string'/>
-     <xs:element minOccurs='0' name='name' type='xs:string'/>
+     <xs:element minOccurs='0' name='ownerCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='ownerName' type='xs:string'/>
+     <xs:element minOccurs='0' name='serviceCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='serviceName' type='xs:string'/>
     </xs:sequence>
    </xs:complexType>
    <xs:complexType name='serviceInfo'>

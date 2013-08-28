@@ -8,42 +8,30 @@
 package ru.lanit.samara.portlet.webservice;
 
 public class ServiceItem  implements java.io.Serializable {
-    private java.lang.String code;
-
     private java.lang.String department;
 
-    private java.lang.String name;
+    private java.lang.String ownerCode;
+
+    private java.lang.String ownerName;
+
+    private java.lang.String serviceCode;
+
+    private java.lang.String serviceName;
 
     public ServiceItem() {
     }
 
     public ServiceItem(
-           java.lang.String code,
            java.lang.String department,
-           java.lang.String name) {
-           this.code = code;
+           java.lang.String ownerCode,
+           java.lang.String ownerName,
+           java.lang.String serviceCode,
+           java.lang.String serviceName) {
            this.department = department;
-           this.name = name;
-    }
-
-
-    /**
-     * Gets the code value for this ServiceItem.
-     * 
-     * @return code
-     */
-    public java.lang.String getCode() {
-        return code;
-    }
-
-
-    /**
-     * Sets the code value for this ServiceItem.
-     * 
-     * @param code
-     */
-    public void setCode(java.lang.String code) {
-        this.code = code;
+           this.ownerCode = ownerCode;
+           this.ownerName = ownerName;
+           this.serviceCode = serviceCode;
+           this.serviceName = serviceName;
     }
 
 
@@ -68,22 +56,82 @@ public class ServiceItem  implements java.io.Serializable {
 
 
     /**
-     * Gets the name value for this ServiceItem.
+     * Gets the ownerCode value for this ServiceItem.
      * 
-     * @return name
+     * @return ownerCode
      */
-    public java.lang.String getName() {
-        return name;
+    public java.lang.String getOwnerCode() {
+        return ownerCode;
     }
 
 
     /**
-     * Sets the name value for this ServiceItem.
+     * Sets the ownerCode value for this ServiceItem.
      * 
-     * @param name
+     * @param ownerCode
      */
-    public void setName(java.lang.String name) {
-        this.name = name;
+    public void setOwnerCode(java.lang.String ownerCode) {
+        this.ownerCode = ownerCode;
+    }
+
+
+    /**
+     * Gets the ownerName value for this ServiceItem.
+     * 
+     * @return ownerName
+     */
+    public java.lang.String getOwnerName() {
+        return ownerName;
+    }
+
+
+    /**
+     * Sets the ownerName value for this ServiceItem.
+     * 
+     * @param ownerName
+     */
+    public void setOwnerName(java.lang.String ownerName) {
+        this.ownerName = ownerName;
+    }
+
+
+    /**
+     * Gets the serviceCode value for this ServiceItem.
+     * 
+     * @return serviceCode
+     */
+    public java.lang.String getServiceCode() {
+        return serviceCode;
+    }
+
+
+    /**
+     * Sets the serviceCode value for this ServiceItem.
+     * 
+     * @param serviceCode
+     */
+    public void setServiceCode(java.lang.String serviceCode) {
+        this.serviceCode = serviceCode;
+    }
+
+
+    /**
+     * Gets the serviceName value for this ServiceItem.
+     * 
+     * @return serviceName
+     */
+    public java.lang.String getServiceName() {
+        return serviceName;
+    }
+
+
+    /**
+     * Sets the serviceName value for this ServiceItem.
+     * 
+     * @param serviceName
+     */
+    public void setServiceName(java.lang.String serviceName) {
+        this.serviceName = serviceName;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -98,15 +146,21 @@ public class ServiceItem  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            ((this.code==null && other.getCode()==null) || 
-             (this.code!=null &&
-              this.code.equals(other.getCode()))) &&
             ((this.department==null && other.getDepartment()==null) || 
              (this.department!=null &&
               this.department.equals(other.getDepartment()))) &&
-            ((this.name==null && other.getName()==null) || 
-             (this.name!=null &&
-              this.name.equals(other.getName())));
+            ((this.ownerCode==null && other.getOwnerCode()==null) || 
+             (this.ownerCode!=null &&
+              this.ownerCode.equals(other.getOwnerCode()))) &&
+            ((this.ownerName==null && other.getOwnerName()==null) || 
+             (this.ownerName!=null &&
+              this.ownerName.equals(other.getOwnerName()))) &&
+            ((this.serviceCode==null && other.getServiceCode()==null) || 
+             (this.serviceCode!=null &&
+              this.serviceCode.equals(other.getServiceCode()))) &&
+            ((this.serviceName==null && other.getServiceName()==null) || 
+             (this.serviceName!=null &&
+              this.serviceName.equals(other.getServiceName())));
         __equalsCalc = null;
         return _equals;
     }
@@ -118,14 +172,20 @@ public class ServiceItem  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        if (getCode() != null) {
-            _hashCode += getCode().hashCode();
-        }
         if (getDepartment() != null) {
             _hashCode += getDepartment().hashCode();
         }
-        if (getName() != null) {
-            _hashCode += getName().hashCode();
+        if (getOwnerCode() != null) {
+            _hashCode += getOwnerCode().hashCode();
+        }
+        if (getOwnerName() != null) {
+            _hashCode += getOwnerName().hashCode();
+        }
+        if (getServiceCode() != null) {
+            _hashCode += getServiceCode().hashCode();
+        }
+        if (getServiceName() != null) {
+            _hashCode += getServiceName().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -138,13 +198,6 @@ public class ServiceItem  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://catalog.portal.cp.org/", "serviceItem"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("code");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "code"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("department");
         elemField.setXmlName(new javax.xml.namespace.QName("", "department"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
@@ -152,8 +205,29 @@ public class ServiceItem  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("name");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "name"));
+        elemField.setFieldName("ownerCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ownerCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ownerName");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ownerName"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serviceCode");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "serviceCode"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("serviceName");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "serviceName"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

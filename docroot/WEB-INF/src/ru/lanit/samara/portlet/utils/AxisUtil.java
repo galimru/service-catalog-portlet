@@ -5,10 +5,7 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import org.apache.axis.AxisFault;
 import ru.lanit.samara.portlet.logic.CatalogBuilder;
 import ru.lanit.samara.portlet.model.Catalog;
-import ru.lanit.samara.portlet.webservice.ServiceCatalog_PortType;
-import ru.lanit.samara.portlet.webservice.ServiceCatalog_ServiceLocator;
-import ru.lanit.samara.portlet.webservice.ServiceFault;
-import ru.lanit.samara.portlet.webservice.ServiceItem;
+import ru.lanit.samara.portlet.webservice.*;
 
 import javax.xml.rpc.ServiceException;
 import java.net.MalformedURLException;
@@ -27,8 +24,8 @@ public class AxisUtil {
         try {
             ServiceCatalog_ServiceLocator serviceLocator = new ServiceCatalog_ServiceLocator();
             ServiceCatalog_PortType portType = serviceLocator.getServiceCatalogPort(new URL(wsUrl));
-            ServiceItem[] services = portType.getServices(owner);
-            CatalogBuilder builder = new CatalogBuilder(services);
+            CatalogItem catalogItem = portType.getServices(owner);
+            CatalogBuilder builder = new CatalogBuilder(catalogItem);
             catalog = builder.build();
         } catch (AxisFault axisFault) {
             axisFault.printStackTrace();

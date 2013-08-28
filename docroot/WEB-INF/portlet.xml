@@ -4,7 +4,7 @@
 	<portlet>
 		<portlet-name>service-catalog</portlet-name>
 		<display-name>Service Catalog Portlet</display-name>
-		<portlet-class>ru.lanit.samara.portlet.logic.CatalogController</portlet-class>
+		<portlet-class>ru.lanit.samara.portlet.logic.ViewController</portlet-class>
 
 		<init-param>
 			<name>view-template</name>

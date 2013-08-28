@@ -12,7 +12,7 @@ public class WebServiceCacheItem implements WebCacheItem {
     private static final long serialVersionUID = -4852509803968739089L;
 
     public static final String CACHE_KEY = "CATALOG_SERVICE";
-    private static final long DEFAULT_REFRESH_TIME = 300000;
+    private static final long DEFAULT_REFRESH_TIME = 60000;
 
     private String wsUrl;
     private String owner;

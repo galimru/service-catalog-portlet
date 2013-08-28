@@ -17,7 +17,7 @@
     PortletPreferences prefs = Validator.isNotNull(portletResource) ? PortletPreferencesFactoryUtil
             .getPortletSetup(request, portletResource) : renderRequest.getPreferences();
     String wsurl = ParamUtil.getString(request, "wsurl", prefs.getValue("wsurl", "localhost"));
-    String owner = ParamUtil.getString(request, "owner", prefs.getValue("owner", ""));
+
 
 %>
 
@@ -27,7 +27,6 @@
 <aui:form action="<%=configurationURL%>" method="post">
     <aui:fieldset>
         <aui:input name="wsurl" label="ws-address" value="<%=wsurl%>"/>
-        <aui:input name="owner" label="ws-owner" value="<%=owner%>"/>
     </aui:fieldset>
     <aui:button-row>
         <aui:button type="submit" value="save" />

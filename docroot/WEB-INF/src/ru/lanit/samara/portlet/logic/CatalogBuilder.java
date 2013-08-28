@@ -2,7 +2,10 @@ package ru.lanit.samara.portlet.logic;
 
 import ru.lanit.samara.portlet.model.Catalog;
 import ru.lanit.samara.portlet.model.Department;
+import ru.lanit.samara.portlet.model.Owner;
 import ru.lanit.samara.portlet.model.Service;
+import ru.lanit.samara.portlet.webservice.CatalogItem;
+import ru.lanit.samara.portlet.webservice.OwnerItem;
 import ru.lanit.samara.portlet.webservice.ServiceItem;
 
 import java.util.ArrayList;
@@ -13,16 +16,24 @@ import java.util.List;
  */
 public class CatalogBuilder {
 
-    private ServiceItem[] services;
+    private CatalogItem catalogItem;
 
-    public CatalogBuilder(ServiceItem[] services) {
-        this.services = services;
+    public CatalogBuilder(CatalogItem catalogItem) {
+        this.catalogItem = catalogItem;
     }
 
     public Catalog build() {
         Catalog catalog = new Catalog();
+        List<Owner> owners = new ArrayList<Owner>();
+        for (OwnerItem elOwner : catalogItem.getOwners()) {
+            Owner owner = new Owner(elOwner.getCode(), elOwner.getName());
+            if (!owners.contains(owner)) {
+                owners.add(owner);
+            }
+        }
+        catalog.setOwners(owners);
         List<Department> departments = new ArrayList<Department>();
-        for (ServiceItem elService : services) {
+        for (ServiceItem elService : catalogItem.getServices()) {
             Department department = new Department(elService.getDepartment(), null);
             if (!departments.contains(department)) {
                 departments.add(department);
@@ -32,7 +43,7 @@ public class CatalogBuilder {
             if (department.getServices() == null) {
                 department.setServices(new ArrayList<Service>());
             }
-            department.getServices().add(new Service(elService.getCode(), elService.getName()));
+            department.getServices().add(new Service(elService.getServiceCode(), elService.getServiceName()));
         }
         catalog.setDepartments(departments);
         return catalog;

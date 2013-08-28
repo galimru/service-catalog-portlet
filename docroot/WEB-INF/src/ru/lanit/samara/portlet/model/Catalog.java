@@ -7,7 +7,16 @@ import java.util.List;
  */
 public class Catalog {
 
+    private List<Owner> owners;
     private List<Department> departments;
+
+    public List<Owner> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(List<Owner> owners) {
+        this.owners = owners;
+    }
 
     public List<Department> getDepartments() {
         return departments;
