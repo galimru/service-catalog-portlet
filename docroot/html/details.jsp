@@ -5,4 +5,6 @@
 
 <input type="button" value="<lui:message key="back"/>" onclick="self.location = '<portlet:renderURL><portlet:param name="view" value="" /></portlet:renderURL>';"/>
 
-${code}
+<div class="ui-service-info">
+    ${code}
+</div>
