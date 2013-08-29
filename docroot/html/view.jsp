@@ -54,7 +54,7 @@
     <aui:input name="code" type="hidden"/>
 </aui:form>
 
-<aui:select name="owner" label="owner" onChange="${ns}showOwner(this.value)">
+<aui:select name="owner" label="owner" onChange="${ns}showOwner(this.value)" cssClass="catalog-owner">
     <aui:option value="" label="all-owners"/>
     <% for (Owner el : catalog.getOwners()) { %>
         <aui:option value="<%=el.getCode()%>" selected="<%=el.getCode().equals(ownerFilter)%>"><%=el.getName()%></aui:option>
@@ -65,14 +65,15 @@
     <div id="catalog-widget">
         <% for (Department department : catalog.getDepartments()) { %>
             <div class="catalog-header">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td class="ui-department-icon"></td>
-                        <td class="ui-department-text"><%=department.getName()%></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <%--<table style="width: 100%; height: 100%;">--%>
+                    <%--<tbody>--%>
+                    <%--<tr valign="middle">--%>
+                        <%--<td class="ui-department-icon"></td>--%>
+                        <%--<td class="ui-department-text"><%=department.getName()%></td>--%>
+                    <%--</tr>--%>
+                    <%--</tbody>--%>
+                <%--</table>--%>
+                <div class="ui-department-text"><%=department.getName()%></div>
                 <div class="ui-department-arrow"></div>
             </div>
             <div class="catalog-content">
