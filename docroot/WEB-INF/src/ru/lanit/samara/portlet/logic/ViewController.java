@@ -22,6 +22,10 @@ public class ViewController extends MVCPortlet {
         System.out.println("doView");
         String wsurl = renderRequest.getPreferences().getValue("wsurl", null);
         String owner = (String) renderRequest.getPortletSession().getAttribute("owner", PortletSession.PORTLET_SCOPE);
+        // workaround
+        if (owner == null) {
+            owner = "null";
+        }
         Catalog catalog = (Catalog) WebCachePoolUtil.get(WebServiceCacheItem.CACHE_KEY + owner, new WebServiceCacheItem(wsurl, owner));
         renderRequest.getPortletSession().setAttribute("catalog", catalog, PortletSession.PORTLET_SCOPE);
         super.doView(renderRequest, renderResponse);

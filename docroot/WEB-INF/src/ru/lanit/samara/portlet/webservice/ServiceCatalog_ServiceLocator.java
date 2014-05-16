@@ -22,7 +22,7 @@ public class ServiceCatalog_ServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for ServiceCatalogPort
-    private java.lang.String ServiceCatalogPort_address = "http://127.0.0.1:8180/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog";
+    private java.lang.String ServiceCatalogPort_address = "http://127.0.0.1/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog";
 
     public java.lang.String getServiceCatalogPortAddress() {
         return ServiceCatalogPort_address;

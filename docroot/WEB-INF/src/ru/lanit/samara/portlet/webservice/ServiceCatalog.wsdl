@@ -106,7 +106,7 @@
  </binding>
  <service name='ServiceCatalog'>
   <port binding='tns:ServiceCatalogBinding' name='ServiceCatalogPort'>
-   <soap:address location='http://127.0.0.1:8180/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog'/>
+   <soap:address location='http://127.0.0.1/core-process-coreps-webservices-2.1.1-SNAPSHOT/ServiceCatalog'/>
   </port>
  </service>
 </definitions>
